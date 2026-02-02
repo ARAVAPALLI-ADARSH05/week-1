@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
 function Home() {
-    console.log(" fruit 🍏 ")
+  let [f, setF] = useState("🍎");
+
+  useEffect(() => {
+    if (f === "🍎") {
+      setF("🍏");
+    } else {
+      setF("🍎");
+    }
+    console.log(` fruit f : ${f} `);
+  },[f]);
+
   return (
-  <>
-  <div>
-    <h1>Fruit : 🍏</h1>
-  </div>
-  </>
-  )
+    <>
+      <div>
+        <h1>Fruit : {f}</h1>
+      </div>
+    </>
+  );
 }
 
-export default Home
+export default Home;
